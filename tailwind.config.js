@@ -7,14 +7,8 @@ module.exports = {
   ],
   theme: {
     colors: {
-      shadow: "#46459bb8",
-      white: "#fff",
-      blue: "#1119D6",
-      gold: "#ffd700",
-      black: "#000",
-      blackLight: "#606060",
-      blue2: "#050572",
-      grey: "#eeecec",
+      main: "#194c33",
+      secondary: "#bbb",
     },
     extend: {},
   },

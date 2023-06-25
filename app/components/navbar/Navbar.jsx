@@ -36,17 +36,18 @@ const links = [
 
 const Navbar = () => {
   return (
-    <div className="flex w-full h-20 items-center justify-between">
+    <div className="flex w-full h-20 items-center font-[800] justify-between  ">
       <Link href="/">Lamamia</Link>
-      <div>
+      <div className="flex gap-10 ">
         {links.map((el) => {
           console.log(el);
           return (
-            <Link key={el.id} href={el.url}>
+            <Link key={el.id} href={el.url} className="self-center">
               {el.title}
             </Link>
           );
         })}
+        <button className="rounded-md px-4 py-1 bg-main w-max">Logout</button>
       </div>
     </div>
   );
