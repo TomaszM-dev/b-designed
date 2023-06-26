@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,8 +10,18 @@ module.exports = {
     colors: {
       main: "#194c33",
       secondary: "#bbb",
+      tertirary: "#171717",
+      gold: "#ffd700",
+      secondarytext: "#9f9e9e",
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        move: {
+          "0%, 100%": { transform: "translateY(-15px)" },
+          "50%": { transform: "translateY(15px)" },
+        },
+      },
+    },
   },
   plugins: [],
 };
