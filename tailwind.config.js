@@ -13,6 +13,7 @@ module.exports = {
       tertirary: "#171717",
       gold: "#ffd700",
       secondarytext: "#9f9e9e",
+      white: "#fff",
     },
     extend: {
       keyframes: {

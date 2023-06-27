@@ -18,10 +18,7 @@
 
 html,
 body {
-  max-height: 100vh;
   overflow-x: hidden;
-  background-color: #111;
-  color: #bbb;
 }
 
 a {
@@ -46,4 +43,17 @@ a {
 }
 
 .move {
+}
+
+.theme {
+  transition: all 1s;
+}
+
+.dark {
+  color: #111;
+  background-color: #fff;
+}
+.light {
+  background-color: #111;
+  color: #bbb;
 }

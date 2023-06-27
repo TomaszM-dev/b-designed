@@ -27,8 +27,8 @@ const About = () => {
               src={card1}
             ></Image>
 
-            <div className="absolute bottom-0  flex flex-col gap-7 items-center justify-center  transition-all  p-10 h-[45%] ">
-              <h2 className="text-[1.3rem] font-[700]">
+            <div className="absolute bottom-0  flex flex-col gap-7 items-center justify-center  transition-all  p-10 h-[45%] text-secondary ">
+              <h2 className="text-[1.3rem] font-[700] text-secondary">
                 {" "}
                 Build an Ai powered Apple app with Figma and{" "}
                 <span className="gradientText">our Course</span>
@@ -66,8 +66,8 @@ const About = () => {
               src={card2}
             ></Image>
 
-            <div className="flex flex-col gap-7 items-center justify-center p-10">
-              <h2 className="text-[1.3rem] font-[700]">
+            <div className="flex flex-col gap-7 items-center justify-center p-10 text-secondary">
+              <h2 className="text-[1.3rem] font-[700] text-secondary">
                 {" "}
                 Build an interesting{" "}
                 <span className="gradientText">website design</span> with our

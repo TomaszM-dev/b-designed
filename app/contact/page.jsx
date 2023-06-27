@@ -16,7 +16,10 @@ const Contact = () => {
             className=" animate-[move_3s_ease_infinite]"
           ></Image>
         </div>
-        <form action="" className="flex-1 flex flex-col gap-5 font-[600]">
+        <form
+          action=""
+          className="flex-1 flex flex-col gap-5 font-[600] text-secondarytext"
+        >
           <input
             className="bg-tertirary py-5 px-4  "
             type="text"
