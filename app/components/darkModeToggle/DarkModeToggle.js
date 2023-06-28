@@ -4,7 +4,6 @@ import React, { useContext } from "react";
 
 const DarkModeToggle = () => {
   const { toggle, mode } = useContext(ThemeContext);
-  console.log(mode, toggle);
 
   return (
     <div

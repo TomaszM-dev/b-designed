@@ -3,14 +3,23 @@ import Image from "next/image";
 import blog1 from "public/move.png";
 import blog2 from "public/apps.jpg";
 
-const BlogPost = () => {
+async function getData(id) {
+  const res = await fetch(`http://localhost:3006/api/posts/${id}`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+const BlogPost = async ({ params }) => {
+  const data = await getData(params.id);
   return (
     <div className="flex flex-col gap-20  my-20">
       <div className="flex gap-10 items-center">
         <div className="flex-1  flex flex-col gap-5">
-          <h2 className="text-[2rem] font-[700] gradientText ">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          </h2>
+          <h2 className="text-[2rem] font-[700] gradientText ">{data.title}</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ipsum
             saepe tempore? Est maiores maxime quam ex? Voluptatem nemo, adipisci
