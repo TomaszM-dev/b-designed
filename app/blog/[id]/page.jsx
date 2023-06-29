@@ -2,15 +2,23 @@ import React from "react";
 import Image from "next/image";
 import blog1 from "public/move.png";
 import blog2 from "public/apps.jpg";
-
 async function getData(id) {
-  const res = await fetch(`http://localhost:3006/api/posts/${id}`);
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
 
   return res.json();
+}
+
+export async function generateMetadata({ params }) {
+  const post = await getData(params.id);
+
+  return {
+    title: post.title,
+    description: post.description,
+  };
 }
 
 const BlogPost = async ({ params }) => {
@@ -27,13 +35,14 @@ const BlogPost = async ({ params }) => {
           </p>
           <div className="flex items-center gap-5 mt-5">
             <Image
+              alt="es"
               src={blog2}
               className="w-10 h-10 rounded-[50%] object-cover"
             ></Image>
             <p>John Doe</p>
           </div>
         </div>
-        <Image src={blog1} className="flex-1 w-[20rem]"></Image>
+        <Image src={blog1} alt="es" className="flex-1 w-[20rem]"></Image>
       </div>
       <div className="flex flex-col gap-5 ">
         <p className=" p-5 rounded-md">

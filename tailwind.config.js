@@ -11,6 +11,7 @@ module.exports = {
       main: "#194c33",
       secondary: "#bbb",
       tertirary: "#171717",
+      black: "#000",
       gold: "#ffd700",
       secondarytext: "#9f9e9e",
       white: "#fff",

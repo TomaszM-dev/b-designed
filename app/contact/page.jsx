@@ -3,6 +3,12 @@ import Image from "next/image";
 import contact from "public/contact.png";
 import Button from "../components/button/Button";
 
+export const metadata = {
+  title: "Contact",
+  description:
+    "B-designed is courses application for young software dev who want to desing beautifull landing pages",
+};
+
 const Contact = () => {
   return (
     <div>
