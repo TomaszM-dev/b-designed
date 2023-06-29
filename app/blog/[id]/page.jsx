@@ -18,6 +18,9 @@ export async function generateMetadata({ params }) {
   return {
     title: post.title,
     description: post.description,
+    image: post.image,
+    content: post.content,
+    username: post.username,
   };
 }
 
@@ -28,15 +31,11 @@ const BlogPost = async ({ params }) => {
       <div className="flex gap-10 items-center">
         <div className="flex-1  flex flex-col gap-5">
           <h2 className="text-[2rem] font-[700] gradientText ">{data.title}</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ipsum
-            saepe tempore? Est maiores maxime quam ex? Voluptatem nemo, adipisci
-            quasi dignissimos,
-          </p>
+          <p>{data.description}</p>
           <div className="flex items-center gap-5 mt-5">
             <Image
               alt="es"
-              src={blog2}
+              src={data.image}
               className="w-10 h-10 rounded-[50%] object-cover"
             ></Image>
             <p>John Doe</p>

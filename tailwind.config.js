@@ -15,6 +15,7 @@ module.exports = {
       gold: "#ffd700",
       secondarytext: "#9f9e9e",
       white: "#fff",
+      red: "#ff0000",
     },
     extend: {
       keyframes: {

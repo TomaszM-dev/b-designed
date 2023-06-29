@@ -1,10 +1,23 @@
 "use client";
 
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Login = () => {
+  const session = useSession();
+  const router = useRouter();
+
+  console.log(session);
+
+  if (session.status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (session.status === "authenticated") {
+    router?.push("/dashboard");
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -36,9 +49,14 @@ const Login = () => {
           Login
         </button>
       </form>
-      <button onClick={() => signIn("google")} className="border-b-2 pb-2">
-        Login With Google
-      </button>
+      <div className="flex gap-10">
+        <button onClick={() => signIn("google")} className="border-b-2 pb-2">
+          Login With Google
+        </button>
+        <Link href="/dashboard/register " className="border-b-2 pb-2">
+          Register
+        </Link>
+      </div>
     </div>
   );
 };

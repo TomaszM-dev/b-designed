@@ -50,10 +50,10 @@ a {
 }
 
 .dark {
-  color: #111;
-  background-color: #fff;
-}
-.light {
   background-color: #111;
   color: #bbb;
+}
+.light {
+  background-color: #fff;
+  color: #111;
 }

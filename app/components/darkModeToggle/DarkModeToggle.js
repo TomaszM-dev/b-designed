@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
       <div className="">🌙</div>
       <div
         className="w-5 h-5 bg-main absolute rounded-[50%] transition-all"
-        style={mode === "light" ? { left: "0px" } : { right: "2px" }}
+        style={mode === "dark" ? { left: "0px" } : { right: "2px" }}
       ></div>
     </div>
   );

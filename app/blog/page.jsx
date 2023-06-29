@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/posts");
+  const res = await fetch("http://localhost:3000/api/posts", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -23,7 +25,7 @@ const Blog = async () => {
       <h1 className="text-[4rem] uppercase gradientText font-[700]">
         Our Blog
       </h1>
-      {data.map((el) => {
+      {data?.map((el) => {
         return (
           <Link
             href={`blog/${el._id}`}
