@@ -36,6 +36,8 @@ const BlogPost = async ({ params }) => {
             <Image
               alt="es"
               src={data.image}
+              width={300}
+              height={300}
               className="w-10 h-10 rounded-[50%] object-cover"
             ></Image>
             <p>John Doe</p>

@@ -44,6 +44,18 @@ const Dashboard = () => {
         }),
       });
       mutate();
+      e.target.reset();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`/api/posts/${id}`, {
+        method: "DELETE",
+      });
+      mutate();
     } catch (err) {
       console.log(err);
     }
@@ -71,7 +83,10 @@ const Dashboard = () => {
                       ></Image>
                     </div>
                     <h2 className="text-[1.6rem] font-[500]">{post.title}</h2>
-                    <span className="text-[1.5rem] text-red justify-self-end">
+                    <span
+                      className="text-[1.5rem] text-red justify-self-end cursor-pointer"
+                      onClick={() => handleDelete(post._id)}
+                    >
                       X
                     </span>
                   </div>
