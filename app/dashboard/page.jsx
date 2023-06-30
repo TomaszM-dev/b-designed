@@ -65,6 +65,9 @@ const Dashboard = () => {
     return (
       <div className="flex  justify-center  gap-10">
         <div className="flex-[0_0_43%]  mt-20 flex flex-col gap-10 overflow-scroll h-[40rem]">
+          <h3 className="text-center text-[2rem] font-[600] uppercase">
+            My posts
+          </h3>
           {isLoading
             ? "Loading..."
             : data?.map((post) => {
