@@ -4,12 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch(
-    "http://b-designed-9exuou0v1-tomaszm-dev.vercel.app/api/posts",
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch("http://b-designed.vercel.app/api/posts", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
