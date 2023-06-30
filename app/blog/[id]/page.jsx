@@ -3,7 +3,9 @@ import Image from "next/image";
 import blog1 from "public/move.png";
 import blog2 from "public/apps.jpg";
 async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`);
+  const res = await fetch(
+    `http://b-designed-9exuou0v1-tomaszm-dev.vercel.app/api/posts/${id}`
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
