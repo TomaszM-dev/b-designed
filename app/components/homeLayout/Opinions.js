@@ -1,0 +1,69 @@
+import React from "react";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import person from "public/person.png";
+
+const Opinions = () => {
+  return (
+    <div className="my-20 flex flex-col items-center ">
+      <h1 className="text-[2.8rem] text-center font-[700] leading-[3.3rem] mb-5 w-[90%] mx-auto">
+        Our <span className="gradientText">Global Students</span> Say it best
+      </h1>
+      <div className="grid grid-cols-2 mt-10 gap-5  ">
+        <div className="flex flex-col  bg-tertirary py-10 px-6 gap-7 rounded-3xl ">
+          <div className="flex justify-between items-center gap-3">
+            <Image
+              src={person}
+              className="w-14 h-14 rounded-[50%] object-cover "
+            ></Image>
+            <div className="flex-1 ">
+              <h2 className="text-[1.3rem] font-[600] ">Tomas Kowalski</h2>
+              <p className="text-secondarytext">Web developer</p>
+            </div>
+            <div className="flex text-gold self-start mt-2">
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ipsam
+            ipsum mollitia dolor quod quasi? Illo temporibus voluptatum
+            molestiae aliquam dolorum ullam alias natus voluptatem, obcaecati
+            rerum eum esse consequatur. Eveniet corporis qui quae aperiam,
+            tempore laboriosam voluptas dicta
+          </p>
+        </div>
+        <div className="flex flex-col  bg-tertirary py-10 px-6 gap-7 rounded-3xl ">
+          <div className="flex justify-between items-center  gap-3">
+            <Image
+              src={person}
+              className="w-14 h-14 rounded-[50%] object-cover "
+            ></Image>
+            <div className="flex-1 ">
+              <h2 className="text-[1.3rem] font-[600] ">Tomas Kowalski</h2>
+              <p className="text-secondarytext">Web developer</p>
+            </div>
+            <div className="flex text-gold self-start mt-2">
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faStar} className="h-4"></FontAwesomeIcon>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ipsam
+            ipsum mollitia dolor quod quasi? Illo temporibus voluptatum
+            molestiae aliquam dolorum ullam alias natus voluptatem, obcaecati
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Opinions;

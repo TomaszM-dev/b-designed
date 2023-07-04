@@ -37,7 +37,7 @@ a {
 }
 
 .gradientText {
-  background: linear-gradient(to bottom, #194c33, #bbb);
+  background: linear-gradient(to right, #194c33, #1f8c22);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -56,4 +56,15 @@ a {
 .light {
   background-color: #fff;
   color: #111;
+}
+.goldGradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #ff7170 2.34%, #ffe57f 100.78%);
+}
+
+.grid-container {
+  column-width: 51rem;
+  column-count: 2;
+  column-gap: 1.5rem;
 }
