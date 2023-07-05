@@ -20,83 +20,96 @@ const OurProduct = () => {
           Netflix clone streaming app or NFT Marketplace where you'll develop
           Cryptoket, a fully-functioning NFT platform.
         </p>
-        <div className="flex items-center  gap-20 w-[90%] mt-6">
-          <div className="flex-1  relative group/item ">
-            <div className="w-full h-[29rem] relative bg-tertirary flex  flex-col rounded-2xl ">
-              <Image
-                className="  rounded-2xl w-full h-[55%] grayFilter  object-cover "
-                src={card1}
-              ></Image>
+        <div className="flex items-center  gap-20 w-[90%] mt-6 flex-1  relative  cursor-pointer  rounded-2xl">
+          <div className="w-full h-[29rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group">
+            <Image
+              className="  w-full h-[55%] grayFilter  object-cover  block"
+              src={card1}
+            ></Image>
 
-              <div className="absolute bottom-0  flex flex-col gap-7 items-center justify-center  transition-all  p-10 h-[45%] text-secondary ">
-                <h2 className="text-[1.3rem] font-[700] text-secondary">
-                  {" "}
-                  Build an Ai powered Apple app with Figma and{" "}
-                  <span className="gradientText">our Course</span>
-                </h2>
-                <div className="flex ">
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold "
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold"
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold"
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold"
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold"
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <p className="pl-4">4.7/5, based on 97 reviews</p>
-                </div>
+            <div className="absolute bottom-0  flex flex-col gap-7 items-center   transition-all  p-10 h-[45%] text-secondary  hover:opacity-100 bg-tertirary group-hover:h-[68%] group ">
+              <h2 className="text-[1.3rem] font-[700] text-secondary">
+                {" "}
+                Build an Ai powered Apple app with Figma and{" "}
+                <span className="gradientText">our Course</span>
+              </h2>
+              <div className="flex ">
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold "
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold"
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold"
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold"
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold"
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <p className="pl-4">4.7/5, based on 97 reviews</p>
+              </div>
+              <div className="opacity-0  transition-all group-hover:opacity-100 flex flex-col gap-4">
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Assumenda quasi nostrum
+                </p>
+                <button className="px-6 py-2 bg-main w-fit rounded-2xl self-end">
+                  Learn More →
+                </button>
               </div>
             </div>
           </div>
-          <div className="flex-1  ">
-            <div className="w-full h-[29rem] relative bg-tertirary flex  flex-col rounded-2xl ">
-              <Image
-                className="  rounded-2xl w-full h-[55%] grayFilter  object-cover"
-                src={card2}
-              ></Image>
+          <div className="w-full h-[29rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group">
+            <Image
+              className="  w-full h-[55%] grayFilter  object-cover  block"
+              src={card2}
+            ></Image>
 
-              <div className="flex flex-col gap-7 items-center justify-center p-10 text-secondary">
-                <h2 className="text-[1.3rem] font-[700] text-secondary">
-                  {" "}
-                  Build an interesting{" "}
-                  <span className="gradientText">website design</span> with our
-                  course{" "}
-                </h2>
-                <div className="flex ">
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold "
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold"
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold"
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold"
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <FontAwesomeIcon
-                    className="h-[1.2rem] text-gold"
-                    icon={faStar}
-                  ></FontAwesomeIcon>
-                  <p className="pl-4">4.7/5, based on 37 reviews</p>
-                </div>
+            <div className="absolute bottom-0  flex flex-col gap-7 items-center   transition-all  p-10 h-[45%] text-secondary  hover:opacity-100 bg-tertirary group-hover:h-[68%] group ">
+              <h2 className="text-[1.3rem] font-[700] text-secondary">
+                {" "}
+                Build an Nft marketplace and of dev 3.0
+                <span className="gradientText"> dive into the world</span>
+              </h2>
+              <div className="flex ">
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold "
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold"
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold"
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold"
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <FontAwesomeIcon
+                  className="h-[1.2rem] text-gold"
+                  icon={faStar}
+                ></FontAwesomeIcon>
+                <p className="pl-4">4.3/5, based on 73 reviews</p>
+              </div>
+              <div className="opacity-0  transition-all group-hover:opacity-100 flex flex-col gap-4">
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Assumenda quasi nostrum
+                </p>
+                <button className="px-6 py-2 bg-main w-fit rounded-2xl self-end">
+                  Learn More →
+                </button>
               </div>
             </div>
           </div>
@@ -124,7 +137,7 @@ const OurProduct = () => {
           Learn how to position yourself for a rewarding career with weekly live
           Q&As, mock interviews
         </p>
-        <button className="px-10 py-3">Learn more →</button>
+        <button className="px-10 py-3 bg-main rounded-xl">Learn more →</button>
       </div>
     </div>
   );

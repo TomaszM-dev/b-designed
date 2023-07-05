@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import blog1 from "public/move.png";
 import blog2 from "public/apps.jpg";
+
 async function getData(id) {
   const res = await fetch(`https://b-designed.vercel.app/api/posts/${id}`);
 
@@ -37,6 +38,7 @@ const BlogPost = async ({ params }) => {
               alt="es"
               src={data.image}
               width={300}
+              height={300}
               className="w-10 h-10 rounded-[50%] object-cover"
             ></Image>
             <p>John Doe</p>

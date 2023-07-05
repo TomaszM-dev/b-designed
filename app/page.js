@@ -2,6 +2,7 @@ import OurOffer from "./components/homeLayout/OurOffer";
 import Opinions from "./components/homeLayout/Opinions";
 import Hero from "./components/homeLayout/Hero";
 import OurProduct from "./components/homeLayout/OurProduct";
+import Faq from "./components/homeLayout/Faq";
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
       <Hero />
       <OurProduct />
       <OurOffer />
-      <Opinions></Opinions>
+      <Opinions />
+      <Faq />
     </div>
   );
 }

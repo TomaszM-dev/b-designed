@@ -13,8 +13,8 @@ const links = [
   },
   {
     id: 2,
-    title: "Portfolio",
-    url: "/portfolio",
+    title: "Courses",
+    url: "/courses",
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const Navbar = () => {
   const session = useSession();
 
   return (
-    <div className="flex w-full h-20 items-center font-[600] justify-between  text-[1.2rem] border-b-[0.1rem] mb-8">
+    <div className="fixed  w-[90%] top-0 left-[5%]  bg-background flex  h-20  items-center font-[600] justify-between  text-[1.2rem] border-b-[0.1rem] z-[1000]">
       <Link href="/">Lamamia</Link>
       <div className="flex gap-10 ">
         <DarkModeToggle></DarkModeToggle>

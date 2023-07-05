@@ -4,12 +4,12 @@ import Button from "../button/Button";
 import img from "public/move.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import film from "public/film.png";
+import film from "public/f1.png";
 import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div>
+    <div className="mt-[8rem]">
       <div className="flex items-center gap-[10rem] ">
         <div className="flex-1 flex-col flex gap-[2rem]">
           <h1 className="text-[4.2rem]  font-[700] gradientText leading-[5rem] ">
@@ -19,7 +19,7 @@ const Hero = () => {
             Turning your idea into reality. We bring together the teams from the
             global tech industry
           </p>
-          <Button url="/portfolio" text="See our Works"></Button>
+          <Button url="/courses" text="See our Works"></Button>
         </div>
         <div className="flex-1 flex-col flex gap-[5rem] ">
           <Image
@@ -39,16 +39,10 @@ const Hero = () => {
           knowledge and start taking on meaningful projects that will set the
           tone for your career.
         </p>
-        <div className="mt-10 w-[80%] mx-auto relative rounded-lg ">
-          <div className="px-7 py-6 bg-white  rounded-[50%] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-            <FontAwesomeIcon
-              icon={faPlay}
-              className="h-6 text-black "
-            ></FontAwesomeIcon>
-          </div>
+        <div className="mt-10 w-[80%] mx-auto relative rounded-3xl overflow-hidden ">
           <Image
             src={film}
-            className="w-full h-[30rem]  object-cover mx-auto mt-10 rounded-lg"
+            className="w-full h-[32rem]  object-cover mx-auto mt-10 "
           ></Image>
         </div>
       </div>
