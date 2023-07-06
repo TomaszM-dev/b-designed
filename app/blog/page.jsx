@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch("https://b-designed.vercel.app/api/posts", {
+  const res = await fetch("http://localhost:3000/api/posts", {
     cache: "no-store",
   });
 
@@ -18,32 +18,36 @@ async function getData() {
 const Blog = async () => {
   const data = await getData();
 
-  console.log(data);
-
   return (
-    <div className="flex flex-col items-center gap-20 my-10">
-      <h1 className="text-[4rem] uppercase gradientText font-[700]">
-        Our Blog
+    <div className="flex flex-col items-center gap-20 mt-40">
+      <h1 className="text-[2.6rem] text-center font-[700] leading-[3.3rem] mb-5 w-[90%] mx-auto">
+        Our blog is filled with lots of interesting content that our
+        <span className="gradientText"> Global Students have created</span>
       </h1>
       {data?.map((el) => {
         return (
           <Link
             href={`blog/${el._id}`}
-            className="flex gap-10 items-center"
+            className="flex gap-5 items-center bg-tertirary w-full overflow-hidden rounded-lg"
             key={el.id}
           >
             <Image
-              className="flex-[0_0_40%] w-full h-full"
+              className="flex-[0_0_30%] p-5"
               src={el.image}
               alt="esssa"
-              height={400}
-              width={300}
+              height={200}
+              width={400}
             ></Image>
-            <div className="flex-1">
-              <h3 className="text-[1.7rem] font-[700] mb-4 gradientText">
+            <div className="flex-1 p-5 flex flex-col gap-5">
+              <h3 className="text-[1.7rem] font-[700]  gradientText">
                 {el.title}
               </h3>
-              <p>{el.body}</p>
+              <p className="text-[1.2rem] font-[500] text-secondarytext ">
+                {el.desc}
+              </p>
+              <p className="font-[700] text-[1.2rem] ">
+                Creator: {el.username}
+              </p>
             </div>
           </Link>
         );

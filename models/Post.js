@@ -8,7 +8,7 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
-    description: {
+    desc: {
       type: String,
 
       required: true,
