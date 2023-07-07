@@ -6,6 +6,7 @@ import Button from "../components/button/Button";
 import contact2 from "public/img4.png";
 import Faq from "../components/homeLayout/Faq";
 import { useState } from "react";
+import { NextResponse } from "next/server";
 
 const Contact = () => {
   const [openPopup, setOpenPopup] = useState(false);
