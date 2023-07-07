@@ -18,9 +18,69 @@ import film from "public/f1.png";
 import Opinions from "@/app/components/homeLayout/Opinions";
 import Link from "next/link";
 import Faq from "@/app/components/homeLayout/Faq";
+import { useSession } from "next-auth/react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { mutate } from "swr";
 
 const Category = ({ params }) => {
+  const [auth, setIsAuth] = useState(true);
+  const router = useRouter();
+
   const data = coursesData();
+  const session = useSession();
+  console.log(session);
+
+  const buyHandler = async (e) => {
+    e.preventDefault();
+
+    if (session.status === "unauthenticated") {
+      setIsAuth(false);
+    }
+
+    if (session.status === "authenticated") {
+      const name = session.data.user.name;
+      const email = session.data.user.email;
+      const category = current[0].category;
+      const title = current[0].title;
+      const price = current[0].price;
+      const image = current[0].image;
+
+      try {
+        const res = await fetch("/api/products", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            name,
+            email,
+            category,
+            title,
+            price,
+            image,
+          }),
+        });
+        mutate();
+
+        res.status === 201 && console.log("essa");
+        res.status === 500 && console.log("lipa");
+      } catch (err) {}
+    }
+  };
+  const closeHandler = () => {
+    setIsAuth(true);
+  };
+
+  const signHandler = () => {
+    router?.push("/dashboard/login");
+    setIsAuth(true);
+  };
+  const registerHandler = () => {
+    router?.push("/dashboard/register");
+    setIsAuth(true);
+  };
 
   const current = data.filter((el) => el.category === params.category);
 
@@ -220,10 +280,43 @@ const Category = ({ params }) => {
             </p>
           </li>
         </ul>
-        <button className="px-7 py-4 mt-4 text-[1.5rem] font-[700] bg-main rounded-xl shadow-xl">
+        <button
+          onClick={buyHandler}
+          className="px-7 py-4 mt-4 text-[1.5rem] font-[700] bg-main rounded-xl shadow-xl"
+        >
           {current[0].buy}
         </button>
       </div>
+      {!auth && (
+        <div className="w-full min-h-screen bg-red bg-opacity-[0.13] fixed z-10 top-0 left-0   ">
+          <div className="w-[30rem] h-[19rem] bg-black  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center   px-5 py-5 opacity-90 rounded-lg">
+            <div
+              onClick={closeHandler}
+              className="cursor-pointer self-end text-[1.6rem] mb-4"
+            >
+              X
+            </div>
+            <h3 className="text-[1.7rem] font-[600] px-5 text-center">
+              You need to be signed in in order to make a purchase
+            </h3>
+            <div className="flex justify-between w-[80%] mt-10 items-center">
+              <button
+                onClick={signHandler}
+                className="px-10 py-3 bg-main rounded-lg"
+              >
+                Sign in
+              </button>
+              <p>OR</p>
+              <button
+                onClick={registerHandler}
+                className="px-10 py-3 bg-main rounded-lg "
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
