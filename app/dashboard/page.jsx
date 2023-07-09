@@ -16,6 +16,8 @@ const Dashboard = () => {
     fetcher
   );
 
+  console.log(data);
+
   if (session.status === "loading") {
     return <p>Loading...</p>;
   }
@@ -28,7 +30,7 @@ const Dashboard = () => {
     e.preventDefault();
 
     const title = e.target[0].value;
-    const description = e.target[1].value;
+    const desc = e.target[1].value;
     const image = e.target[2].value;
     const content = e.target[3].value;
 
@@ -37,7 +39,7 @@ const Dashboard = () => {
         method: "POST",
         body: JSON.stringify({
           title,
-          description,
+          desc,
           image,
           content,
           username: session.data.user.name,

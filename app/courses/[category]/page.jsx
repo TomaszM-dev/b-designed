@@ -28,6 +28,7 @@ const Category = ({ params }) => {
   const router = useRouter();
 
   const data = coursesData();
+  const current = data.filter((el) => el.category === params.category);
   const session = useSession();
   console.log(session);
 
@@ -39,8 +40,9 @@ const Category = ({ params }) => {
     }
 
     if (session.status === "authenticated") {
-      const name = session.data.user.name;
-      const email = session.data.user.email;
+      const id = Math.floor((1 + Math.random()) * 1000000);
+      const username = session.data.user.name;
+      const mail = session.data.user.email;
       const category = current[0].category;
       const title = current[0].title;
       const price = current[0].price;
@@ -54,19 +56,19 @@ const Category = ({ params }) => {
           },
 
           body: JSON.stringify({
-            name,
-            email,
+            id,
+            username,
+            mail,
             category,
             title,
             price,
             image,
           }),
         });
-        mutate();
 
         res.status === 201 && console.log("essa");
-        res.status === 500 && console.log("lipa");
-      } catch (err) {}
+        // res.status === 500 && console.log("lipton");
+      } catch (e) {}
     }
   };
   const closeHandler = () => {
@@ -82,7 +84,8 @@ const Category = ({ params }) => {
     setIsAuth(true);
   };
 
-  const current = data.filter((el) => el.category === params.category);
+  const es = Math.floor((1 + Math.random()) * 1000);
+  console.log(es);
 
   return (
     <div className="  mx-auto flex flex-col items-center gap-20 mt-[5rem]">
@@ -111,7 +114,13 @@ const Category = ({ params }) => {
           </div>
           <p>{current[0].reviews}</p>
         </div>
-        <Image alt="#" src={current[0].image} className="w-full h-full"></Image>
+        <Image
+          alt="#"
+          src={current[0].image}
+          width={1000}
+          height={1000}
+          className="w-full h-full"
+        ></Image>
       </div>
       <div className="flex gap-10">
         <div className="flex flex-col gap-10 pr-7 w-[95%]">

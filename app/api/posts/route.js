@@ -18,7 +18,6 @@ export const GET = async (request) => {
 export const POST = async (request) => {
   const body = await request.json();
   const newPost = new Post(body);
-
   console.log(newPost);
   try {
     await connect();
@@ -26,6 +25,6 @@ export const POST = async (request) => {
     await newPost.save();
     return new NextResponse("Post has been created", { status: 201 });
   } catch (err) {
-    return new NextResponse("database error", { status: 500 });
+    console.log(err);
   }
 };

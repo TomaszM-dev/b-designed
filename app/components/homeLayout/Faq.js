@@ -7,7 +7,7 @@ import Toggle from "./FaqSection/Toggle";
 
 const Faq = () => {
   const faqData = FaqData();
-  console.log(faqData);
+
   return (
     <div>
       <h1 className="text-[2.8rem] text-center font-[700] leading-[3.3rem] mb-5 w-[90%] mx-auto">

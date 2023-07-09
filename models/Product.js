@@ -1,15 +1,13 @@
-import mongoose, { mongo } from "mongoose";
-
+import mongoose from "mongoose";
 const { Schema } = mongoose;
-
 const productSchema = new Schema(
   {
-    name: {
+    username: {
       type: String,
 
       required: true,
     },
-    email: {
+    mail: {
       type: String,
 
       required: true,

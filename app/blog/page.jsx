@@ -18,6 +18,7 @@ async function getData() {
 const Blog = async () => {
   const data = await getData();
 
+  console.log(data);
   return (
     <div className="flex flex-col items-center gap-20 mt-40">
       <h1 className="text-[2.6rem] text-center font-[700] leading-[3.3rem] mb-5 w-[90%] mx-auto">
