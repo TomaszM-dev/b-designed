@@ -1,16 +1,38 @@
+"use client";
 import React from "react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import person from "public/person.png";
+import { useScroll } from "../useScroll/useScroll";
+import {
+  scrollLeft,
+  scrollReveal,
+  scrollRight,
+  up,
+} from "../animations/animation";
+import { motion } from "framer-motion";
 
 const Opinions = () => {
+  const [element, controls] = useScroll();
   return (
     <div className="my-20 flex flex-col items-center ">
-      <h1 className="text-[2.8rem] text-center font-[700] leading-[3.3rem] mb-5 w-[90%] mx-auto">
+      <motion.h1
+        variants={up}
+        animate={controls}
+        initial="hidden"
+        ref={element}
+        className="text-[2.8rem] text-center font-[700] leading-[3.3rem] mb-5 w-[90%] mx-auto"
+      >
         Our <span className="gradientText">Global Students</span> Say it best
-      </h1>
-      <div className="grid grid-cols-2 mt-10 gap-6  ">
+      </motion.h1>
+      <motion.div
+        variants={scrollReveal}
+        animate={controls}
+        initial="hidden"
+        ref={element}
+        className="grid grid-cols-2 mt-10 gap-6  "
+      >
         <div className="flex flex-col  bg-tertirary py-10 px-6 gap-7 rounded-3xl ">
           <div className="flex justify-between items-center gap-3">
             <Image
@@ -161,7 +183,7 @@ const Opinions = () => {
             molestiae aliquam dolorum ullam alias natus voluptatem, obcaecati
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
