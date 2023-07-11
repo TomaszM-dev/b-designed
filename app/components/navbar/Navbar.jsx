@@ -55,7 +55,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" fixed  w-[90%] top-0 left-[5%]  bg-background flex  h-20  items-center font-[600] justify-between  text-[1.2rem] border-b-[0.1rem] z-[1000]">
+    <div className=" fixed  w-[100%] top-0 left-[0%] px-20 text-secondary  bg-background flex  h-20  items-center font-[600] justify-between  text-[1.2rem] border-b-[0.1rem] z-[1000]">
       <Link href="/">B-designed</Link>
       <div className="flex gap-10 ">
         <DarkModeToggle></DarkModeToggle>

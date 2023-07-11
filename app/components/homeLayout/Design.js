@@ -41,7 +41,9 @@ const Design = () => {
         Learn how to position yourself for a rewarding career with weekly live
         Q&As, mock interviews
       </p>
-      <button className="px-10 py-3 bg-main rounded-xl">Learn more →</button>
+      <button className="px-10 py-3 bg-main rounded-xl text-secondary">
+        Learn more →
+      </button>
     </motion.div>
   );
 };

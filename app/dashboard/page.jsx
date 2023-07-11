@@ -76,7 +76,7 @@ const Dashboard = () => {
       <div className="flex  justify-center  gap-10 mt-40">
         <div className="flex-[0_0_43%]  mt-10 flex flex-col gap-10 overflow-scroll h-[40rem]">
           <div className=" h-[50%] p-4 rounded-md overflow-scroll">
-            <h3 className="text-center text-[1.7rem] border-b-2 border-main w-fit  mx-auto px-5  font-[600] uppercase">
+            <h3 className=" text-center text-[1.7rem] border-b-2 border-main w-fit  mx-auto px-5  font-[600] uppercase">
               My Orders
             </h3>
             {loadingPosts
@@ -85,7 +85,7 @@ const Dashboard = () => {
                   return (
                     <div
                       key={order._id}
-                      className="flex   flex-col bg-tertirary  p-5 gap-4  rounded-md  mt-5 "
+                      className="flex   flex-col text-secondary bg-tertirary  p-5 gap-4  rounded-md  mt-5 "
                     >
                       <p>Order id: {order._id}</p>
                       <p>Total Price: {order.payment} $</p>
@@ -105,7 +105,7 @@ const Dashboard = () => {
                   return (
                     <div
                       key={post._id}
-                      className="flex  items-center justify-between bg-tertirary p-5 rounded-md  mt-5 gap-5"
+                      className="flex  text-secondary items-center justify-between bg-tertirary p-5 rounded-md  mt-5 gap-5"
                     >
                       <div>
                         <Image

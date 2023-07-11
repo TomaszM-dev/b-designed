@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 const Opinions = () => {
   const [element, controls] = useScroll();
   return (
-    <div className="my-20 flex flex-col items-center ">
+    <div className="my-20 flex flex-col items-center text-secondary ">
       <motion.h1
         variants={up}
         animate={controls}

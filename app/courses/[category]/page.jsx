@@ -14,16 +14,27 @@ import {
   faFileContract,
   faFile,
 } from "@fortawesome/free-solid-svg-icons";
-import film from "public/f1.png";
+
 import Opinions from "@/app/components/homeLayout/Opinions";
 import Link from "next/link";
 import Faq from "@/app/components/homeLayout/Faq";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { mutate } from "swr";
+
+import { motion } from "framer-motion";
+import { useScroll } from "@/app/components/useScroll/useScroll";
+import {
+  scrollLeft,
+  scrollReveal,
+  scrollRight,
+  up,
+  photoAnim,
+  fade,
+} from "@/app/components/animations/animation";
 
 const Category = ({ params }) => {
+  const [element, controls] = useScroll();
   const [auth, setIsAuth] = useState(true);
   const router = useRouter();
 
@@ -88,19 +99,37 @@ const Category = ({ params }) => {
   console.log(es);
 
   return (
-    <div className="  mx-auto flex flex-col items-center gap-20 mt-[5rem]">
-      <div className=" flex flex-col items-center gap-9 mt-20">
-        <p className="uppercase gradientText font-[700] text-[1.2rem]">
+    <div className="  mx-auto flex flex-col items-center gap-20 mt-[5rem] text-secondary">
+      <div className=" flex flex-col items-center gap-9 mt-20 ">
+        <motion.p
+          variants={scrollLeft}
+          animate={controls}
+          initial="hidden"
+          ref={element}
+          className="uppercase gradientText font-[700] text-[1.2rem]"
+        >
           {current[0].title}
-        </p>
-        <h1 className="text-[3.5rem] font-[700] text-center leading-[3.9rem]">
+        </motion.p>
+        <motion.h1
+          variants={up}
+          animate={controls}
+          initial="hidden"
+          ref={element}
+          className="text-[3.5rem] font-[700] text-center leading-[3.9rem]"
+        >
           {current[0].headline}
           <span className="gradientText"> {current[0].headlineG}</span>
-        </h1>
-        <h4 className="text-[1.4rem] w-[70%] text-center text-secondarytext mt-[-0.7rem]">
+        </motion.h1>
+        <motion.h4
+          variants={up}
+          animate={controls}
+          initial="hidden"
+          ref={element}
+          className="text-[1.4rem] w-[70%] text-center text-secondarytext mt-[-0.7rem]"
+        >
           Climb out of tutorial hell and build an interactive movie app that
           will amaze recruiters
-        </h4>
+        </motion.h4>
         <Link href={`#buynow`}>
           <button className="bg-main px-9 py-3 rounded-lg mt-3">Buy Now</button>
         </Link>
@@ -114,16 +143,24 @@ const Category = ({ params }) => {
           </div>
           <p>{current[0].reviews}</p>
         </div>
-        <Image
-          alt="#"
-          src={current[0].image}
-          width={1000}
-          height={1000}
-          className="w-full h-full"
-        ></Image>
+        <motion.div
+          variants={fade}
+          animate={controls}
+          initial="hidden"
+          ref={element}
+          className="overflow-hidden"
+        >
+          <Image
+            alt="#"
+            src={current[0].image}
+            width={1000}
+            height={1000}
+            className="w-full h-full rounded-lg overflow-hidden"
+          ></Image>
+        </motion.div>
       </div>
       <div className="flex gap-10">
-        <div className="flex flex-col gap-10 pr-7 w-[95%]">
+        <motion.div className="flex flex-col gap-10 pr-7 w-[95%]">
           <div className="w-[20%] h-[7px] rounded-2xl mb-[-1.4rem] bg-main"></div>
           <h2 className="text-[2.8rem] font-[700] leading-[3.3rem] ">
             The Fast-Track to <span className="gradientText">Web Design</span>
@@ -142,7 +179,7 @@ const Category = ({ params }) => {
             appraised YouTube educator, and recognised as one out of only 100
             GitHub Stars in the world ⭐️
           </p>
-        </div>
+        </motion.div>
         <div className="flex gap-10">
           <div className="flex flex-col gap-10 pt-20 flex-1">
             <div className="p-10 bg-tertirary rounded-3xl  gap-5 flex flex-col">

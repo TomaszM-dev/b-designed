@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,16 +7,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import card2 from "public/streaming.png";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
+import { motion } from "framer-motion";
+import { useScroll } from "../components/useScroll/useScroll";
+import {
+  scrollLeft,
+  scrollReveal,
+  scrollRight,
+  up,
+  fade,
+} from "../components/animations/animation";
+
 const Courses = () => {
+  const [element, controls] = useScroll();
   return (
     <div className="flex flex-col justify-start items-center gap-10 mt-[8rem]">
-      <h1 className="text-[2.7rem] text-center font-[700] leading-[3.3rem] mb-5 w-[80%] mx-auto">
+      <motion.h1
+        variants={up}
+        animate={controls}
+        initial="hidden"
+        ref={element}
+        className="text-[2.7rem] text-center font-[700] leading-[3.3rem] mb-5 w-[80%] mx-auto"
+      >
         Choose our course <span className="gradientText">Enroll Now</span> and
         see how your skills goes through a roof!
-      </h1>
+      </motion.h1>
       <div className="flex items-center  gap-20 w-[90%] mt-6 flex-1  relative  cursor-pointer  rounded-2xl">
-        <Link
-          href="courses/filmpire"
+        <motion.div
+          variants={scrollLeft}
+          animate={controls}
+          initial="hidden"
+          ref={element}
           className="w-full h-[29rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group"
         >
           <Image
@@ -57,15 +78,21 @@ const Courses = () => {
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Assumenda quasi nostrum
               </p>
-              <button className="px-6 py-2 bg-main w-fit rounded-2xl self-end">
-                Learn More →
-              </button>
+              <Link href="courses/filmpire">
+                <button className="px-6 py-2  bg-main w-fit rounded-2xl self-end">
+                  Learn More →
+                </button>
+              </Link>
             </div>
           </div>
-        </Link>
+        </motion.div>
 
-        <Link
+        <motion.div
           href="courses/nft-marketplace"
+          variants={scrollRight}
+          animate={controls}
+          initial="hidden"
+          ref={element}
           className="w-full h-[29rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group"
         >
           <Image
@@ -104,12 +131,14 @@ const Courses = () => {
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Assumenda quasi nostrum
               </p>
-              <button className="px-6 py-2 bg-main w-fit rounded-2xl self-end">
-                Learn More →
-              </button>
+              <Link href="courses/nft-marketplace">
+                <button className="px-6 py-2 bg-main w-fit rounded-2xl self-end">
+                  Learn More →
+                </button>
+              </Link>
             </div>
           </div>
-        </Link>
+        </motion.div>
       </div>
     </div>
   );

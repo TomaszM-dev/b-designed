@@ -121,7 +121,7 @@ const Checkout = () => {
             <p>{cvcS}</p>
           </div>
         </div>
-        <div className="flex justify-between px-5 mt-8">
+        <div className="flex justify-between px-5 mt-8 ">
           <div>
             <p className="uppercase font-[600] text-[0.8rem]">Card holder</p>
             <p className="text-[1.4rem] uppercase mt-1">{name}</p>
@@ -134,7 +134,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col ">
         <h2 className="gradientText text-[2.7rem] font-[600]">
           Payment Details{" "}
         </h2>

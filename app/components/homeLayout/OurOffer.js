@@ -23,7 +23,7 @@ import { motion } from "framer-motion";
 const OurOffer = () => {
   const [element, controls] = useScroll();
   return (
-    <motion.div className="flex flex-col gap-20">
+    <motion.div className="flex flex-col gap-20 text-secondary">
       <div className="mt-20">
         <motion.h1
           variants={up}

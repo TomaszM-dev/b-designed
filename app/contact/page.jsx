@@ -7,8 +7,19 @@ import contact2 from "public/img4.png";
 import Faq from "../components/homeLayout/Faq";
 import { useState } from "react";
 import { NextResponse } from "next/server";
+import { motion } from "framer-motion";
+import { useScroll } from "@/app/components/useScroll/useScroll";
+import {
+  scrollLeft,
+  scrollReveal,
+  scrollRight,
+  up,
+  photoAnim,
+  fade,
+} from "@/app/components/animations/animation";
 
 const Contact = () => {
+  const [element, controls] = useScroll();
   const [openPopup, setOpenPopup] = useState(false);
   const [error, setError] = useState(false);
 
@@ -46,13 +57,25 @@ const Contact = () => {
   return (
     <div className="mt-40 flex flex-col  gap-20">
       <div className="flex flex-col gap-10">
-        <h1 className="text-[2.7rem] text-center font-[700] leading-[3.3rem] mb-20 w-[90%] mx-auto">
+        <motion.h1
+          variants={scrollReveal}
+          animate={controls}
+          initial="hidden"
+          ref={element}
+          className="text-[2.7rem] text-center font-[700] leading-[3.3rem] mb-20 w-[90%] mx-auto"
+        >
           Contact us if you have any specific questions
           <span className="gradientText"> we are happy to help </span>
           our customer support works 24/7
-        </h1>
-        <div className="flex gap-20">
-          <div className="flex flex-col gap-10 pr-7 w-[95%] flex-1">
+        </motion.h1>
+        <div className="flex gap-20 items-center">
+          <motion.div
+            variants={scrollLeft}
+            animate={controls}
+            initial="hidden"
+            ref={element}
+            className="flex flex-col gap-10 pr-7 w-[95%] flex-1"
+          >
             <div className="w-[20%] h-[7px] rounded-2xl mb-[-1.4rem] bg-main"></div>
             <h2 className="text-[2.8rem] font-[700] leading-[3.3rem] ">
               We are here to<span className="gradientText"> Assist you </span>
@@ -66,8 +89,16 @@ const Contact = () => {
               Contacting us is quick and effortless. Below, you'll find various
               ways to get in touch:
             </p>
-          </div>
-          <Image src={contact2} className="object-contain w-[50%]"></Image>
+          </motion.div>
+          <motion.div
+            variants={scrollRight}
+            animate={controls}
+            initial="hidden"
+            ref={element}
+            className="object-contain w-[50%]"
+          >
+            <Image src={contact2} className="object-contain w-full"></Image>
+          </motion.div>
         </div>
       </div>
       <Faq />
