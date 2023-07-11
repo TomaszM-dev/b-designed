@@ -5,6 +5,7 @@ import nft from "public/film2.png";
 import film from "public/f1.png";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 const Basket = ({ setBasketOpen, basketOpen }) => {
   const [isLoadingg, setIsLoading] = useState(false);
@@ -94,7 +95,9 @@ const Basket = ({ setBasketOpen, basketOpen }) => {
         </div>
         <div className="flex flex-col gap-4 mt-10 ">
           <p>Total Price: ${totalPrice}</p>
-          <button className="px-7 py-3 bg-main rounded-lg ">Checkout</button>
+          <Link href="/checkout" onClick={() => setBasketOpen(false)}>
+            <button className="px-7 py-3 bg-main rounded-lg ">Checkout</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -41,3 +41,17 @@ export const GET = async (request) => {
     return new NextResponse("database error", { status: 500 });
   }
 };
+
+export const DELETE = async (request, { params }) => {
+  //fetch
+
+  try {
+    await connect();
+
+    await Product.deleteMany({});
+
+    return new NextResponse("product has been deleted", { status: 200 });
+  } catch (err) {
+    console.log(err);
+  }
+};

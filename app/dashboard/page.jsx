@@ -11,12 +11,20 @@ const Dashboard = () => {
   console.log(session);
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, mutate, error, isLoading } = useSWR(
-    `/api/posts?username=${session?.data?.user.name}`,
-    fetcher
-  );
+  const {
+    data: dataPosts,
+    mutate: postmutate,
+    error: posterror,
+    isLoading: loadingPosts,
+  } = useSWR(`/api/posts?username=${session?.data?.user.name}`, fetcher);
+  const {
+    data: dataOrders,
+    mutate,
+    error,
+    isLoading: loadingOrders,
+  } = useSWR(`/api/orders?username=${session?.data?.user.name}`, fetcher);
 
-  console.log(data);
+  console.log(dataOrders);
 
   if (session.status === "loading") {
     return <p>Loading...</p>;
@@ -66,37 +74,60 @@ const Dashboard = () => {
   if (session.status === "authenticated") {
     return (
       <div className="flex  justify-center  gap-10 mt-40">
-        <div className="flex-[0_0_43%]  mt-20 flex flex-col gap-10 overflow-scroll h-[40rem]">
-          <h3 className="text-center text-[2rem] font-[600] uppercase">
-            My posts
-          </h3>
-          {isLoading
-            ? "Loading..."
-            : data?.map((post) => {
-                console.log(post);
-                return (
-                  <div
-                    key={post._id}
-                    className="flex  items-center justify-between "
-                  >
-                    <div>
-                      <Image
-                        src={post.image}
-                        width={180}
-                        height={220}
-                        alt="es"
-                      ></Image>
-                    </div>
-                    <h2 className="text-[1.6rem] font-[500]">{post.title}</h2>
-                    <span
-                      className="text-[1.5rem] text-red justify-self-end cursor-pointer"
-                      onClick={() => handleDelete(post._id)}
+        <div className="flex-[0_0_43%]  mt-10 flex flex-col gap-10 overflow-scroll h-[40rem]">
+          <div className=" h-[50%] p-4 rounded-md overflow-scroll">
+            <h3 className="text-center text-[1.7rem] border-b-2 border-main w-fit  mx-auto px-5  font-[600] uppercase">
+              My Orders
+            </h3>
+            {loadingPosts
+              ? "Loading..."
+              : dataOrders?.map((order) => {
+                  return (
+                    <div
+                      key={order._id}
+                      className="flex   flex-col bg-tertirary  p-5 gap-4  rounded-md  mt-5 "
                     >
-                      X
-                    </span>
-                  </div>
-                );
-              })}
+                      <p>Order id: {order._id}</p>
+                      <p>Total Price: {order.payment} $</p>
+                      <p>Card Number: {order.cardNumber}</p>
+                    </div>
+                  );
+                })}
+          </div>
+          <div className=" h-[50%] p-4 rounded-md overflow-scroll">
+            <h3 className="text-center text-[1.7rem] border-b-2 border-main w-fit  mx-auto px-5  font-[600] uppercase">
+              My posts
+            </h3>
+            {loadingPosts
+              ? "Loading..."
+              : dataPosts?.map((post) => {
+                  console.log(post);
+                  return (
+                    <div
+                      key={post._id}
+                      className="flex  items-center justify-between bg-tertirary p-5 rounded-md  mt-5 gap-5"
+                    >
+                      <div>
+                        <Image
+                          src={post.image}
+                          width={180}
+                          height={220}
+                          alt="es"
+                        ></Image>
+                      </div>
+                      <h2 className="text-[1.3rem] font-[500] ">
+                        {post.title}
+                      </h2>
+                      <span
+                        className="text-[1.2rem] text-red  cursor-pointer"
+                        onClick={() => handleDelete(post._id)}
+                      >
+                        X
+                      </span>
+                    </div>
+                  );
+                })}
+          </div>
         </div>
         <form onSubmit={handleSubmit} className="flex flex-col gap-5 flex-1">
           <h1 className="text-[2rem] text-center font-[700] gradientText uppercase mb-4">
