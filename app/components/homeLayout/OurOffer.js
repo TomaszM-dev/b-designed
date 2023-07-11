@@ -41,7 +41,7 @@ const OurOffer = () => {
           animate={controls}
           initial="hidden"
           ref={element}
-          className="flex gap-10 mt-20 items-stretch"
+          className="flex gap-10 mt-20 items-stretch max-lg:flex-col max-lg:w-[70%]  max-md:w-[95%] max-lg:mx-auto max-lg:gap-20"
         >
           <div className=" flex flex-col items-center gap-5 bg-tertirary px-5 py-[4rem] rounded-lg">
             <FontAwesomeIcon
@@ -94,7 +94,7 @@ const OurOffer = () => {
         </p>
         <div className="flex-[0_0_30%] w-full h-[1px] bg-secondary"></div>
       </div>
-      <div className="flex gap-20 mt-[-2rem]">
+      <div className="flex gap-20 mt-[-2rem] max-lg:gap-10 max-md:flex-col max-md:w-[60%] max-md:mx-auto max-md:gap-20">
         <div>
           <Image src={firm1}></Image>
         </div>

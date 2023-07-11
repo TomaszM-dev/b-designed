@@ -22,7 +22,7 @@ const BlogPost = async ({ params }) => {
         {data.title}
         <span className="gradientText"> and enjoy coding</span>
       </h1>
-      <div className="flex justify-between w-[70%] mx-auto text-[1.2rem] text-secondarytext font-[500] mb-5">
+      <div className="flex max-md:flex-col max-md:text-center max-md:gap-5 justify-between w-[70%] mx-auto text-[1.2rem] text-secondarytext font-[500] mb-5">
         <p>B-designed</p>
         <p>Productivity resources</p>
         <p>User : {data.username}</p>

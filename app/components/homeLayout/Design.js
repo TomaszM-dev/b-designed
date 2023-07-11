@@ -18,7 +18,7 @@ const Design = () => {
       animate={controls}
       initial="hidden"
       ref={element}
-      className="border-[3px] w-[75%] h-[35rem] mx-auto border-main  relative flex flex-col gap-10 items-center justify-center "
+      className="border-[3px] w-[75%] max-md:w-[100%] h-fit py-10 mx-auto border-main  relative flex flex-col gap-10 items-center justify-center "
     >
       <div className="p-4 border-2 border-main absolute top-[-1rem] left-[-1rem] bg-background "></div>
       <div className="p-4 border-2 border-main absolute top-[45%] left-[-1.3rem] bg-background "></div>

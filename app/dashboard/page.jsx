@@ -73,7 +73,7 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <div className="flex  justify-center  gap-10 mt-40">
+      <div className="flex  justify-center  gap-10 mt-40 max-lg:flex-col max-lg:mt-20">
         <div className="flex-[0_0_43%]  mt-10 flex flex-col gap-10 overflow-scroll h-[40rem]">
           <div className=" h-[50%] p-4 rounded-md overflow-scroll">
             <h3 className=" text-center text-[1.7rem] border-b-2 border-main w-fit  mx-auto px-5  font-[600] uppercase">

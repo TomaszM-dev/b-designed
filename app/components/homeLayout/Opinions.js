@@ -31,7 +31,7 @@ const Opinions = () => {
         animate={controls}
         initial="hidden"
         ref={element}
-        className="grid grid-cols-2 mt-10 gap-6  "
+        className="grid grid-cols-2 mt-10 gap-6  max-md:grid-cols-1 "
       >
         <div className="flex flex-col  bg-tertirary py-10 px-6 gap-7 rounded-3xl ">
           <div className="flex justify-between items-center gap-3">

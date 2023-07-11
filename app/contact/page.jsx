@@ -62,13 +62,13 @@ const Contact = () => {
           animate={controls}
           initial="hidden"
           ref={element}
-          className="text-[2.7rem] text-center font-[700] leading-[3.3rem] mb-20 w-[90%] mx-auto"
+          className="text-[2.7rem] max-md:text-[2.2rem] text-center font-[700] leading-[3.3rem] mb-20 w-[90%] mx-auto"
         >
           Contact us if you have any specific questions
           <span className="gradientText"> we are happy to help </span>
           our customer support works 24/7
         </motion.h1>
-        <div className="flex gap-20 items-center">
+        <div className="flex gap-20 items-center max-lg:flex-col max-lg:mt-10 ">
           <motion.div
             variants={scrollLeft}
             animate={controls}
@@ -95,7 +95,7 @@ const Contact = () => {
             animate={controls}
             initial="hidden"
             ref={element}
-            className="object-contain w-[50%]"
+            className="object-contain w-[50%] max-md:w-[100%]"
           >
             <Image src={contact2} className="object-contain w-full"></Image>
           </motion.div>
@@ -106,16 +106,16 @@ const Contact = () => {
         <h1 className="text-[3.4rem] font-[700] text-center mb-[3.4rem] gradientText ">
           Lets keep in touch
         </h1>
-        <div className="flex gap-20 items-center">
+        <div className="flex gap-20 items-center max-lg:flex-col">
           <div className="flex-1">
             <Image
               src={contact}
-              className=" animate-[move_3s_ease_infinite]"
+              className=" animate-[move_3s_ease_infinite] max-lg:w-[50%] max-lg:mx-auto"
             ></Image>
           </div>
           <form
             onSubmit={handleSubmit}
-            className="flex-1 flex flex-col gap-5 font-[600] text-secondarytext"
+            className="flex-1 flex flex-col gap-5 font-[600] text-secondarytext max-lg:w-[70%]"
           >
             <input
               className="bg-tertirary py-5 px-4  "
@@ -133,7 +133,9 @@ const Contact = () => {
               cols="30"
               rows="10"
             ></textarea>
-            <button className="w-fit px-7 py-4 bg-main rounded-lg">Send</button>
+            <button className="w-fit px-7 py-4 bg-main rounded-lg max-lg:w-full">
+              Send
+            </button>
           </form>
         </div>
       </div>

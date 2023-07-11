@@ -159,7 +159,7 @@ const Category = ({ params }) => {
           ></Image>
         </motion.div>
       </div>
-      <div className="flex gap-10">
+      <div className="flex gap-10 max-lg:flex-col max-lg:gap-20">
         <motion.div className="flex flex-col gap-10 pr-7 w-[95%]">
           <div className="w-[20%] h-[7px] rounded-2xl mb-[-1.4rem] bg-main"></div>
           <h2 className="text-[2.8rem] font-[700] leading-[3.3rem] ">
@@ -180,7 +180,7 @@ const Category = ({ params }) => {
             GitHub Stars in the world ⭐️
           </p>
         </motion.div>
-        <div className="flex gap-10">
+        <div className="flex gap-10 max-md:flex-col">
           <div className="flex flex-col gap-10 pt-20 flex-1">
             <div className="p-10 bg-tertirary rounded-3xl  gap-5 flex flex-col">
               <FontAwesomeIcon
@@ -284,7 +284,7 @@ const Category = ({ params }) => {
       </div>
       <div
         id="buynow"
-        className="w-[70%] bg-tertirary  shadow-lg rounded-lg flex flex-col gap-8 p-10 mt-[-2rem] my-20"
+        className="w-[70%] max-md:w-[100%] bg-tertirary  shadow-lg rounded-lg flex flex-col gap-8 p-10 mt-[-2rem] my-20"
       >
         <h1 className="text-[2.2rem] font-[700] text-center leading-[2.6rem] ">
           🚀 Leverage

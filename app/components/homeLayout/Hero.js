@@ -18,8 +18,8 @@ const Hero = () => {
 
   console.log(element);
   return (
-    <div className="mt-[8rem] ">
-      <motion.div className="flex items-center gap-[10rem]  ">
+    <div className="mt-[8rem]  max-lg:w-[70%] max-lg:mx-auto max-md:w-[100%]">
+      <motion.div className="flex items-center gap-[10rem]  max-lg:flex-col  max-lg:gap-20 ">
         <motion.div
           variants={scrollLeft}
           animate={controls}

@@ -102,7 +102,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="flex w-[100%] mx-auto  h-screen  items-center gap-20 ">
+    <div className="flex w-[100%] mx-auto  h-screen  items-center gap-20 max-lg:flex-col  max-lg:my-40">
       <div className="w-[27rem] h-[17rem] bg-main text-white rounded-xl  relative z-[0] flex flex-col gap-5 shadow-sm shadow-main">
         <Image
           src={map}
@@ -134,7 +134,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      <div className="flex-1 flex flex-col ">
+      <div className="flex-1 flex flex-col max-lg:w-[70%] max-md:w-[90%]">
         <h2 className="gradientText text-[2.7rem] font-[600]">
           Payment Details{" "}
         </h2>

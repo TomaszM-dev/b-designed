@@ -28,7 +28,7 @@ const Blog = async () => {
         return (
           <Link
             href={`blog/${el._id}`}
-            className="flex gap-5 items-center bg-tertirary w-full overflow-hidden rounded-lg"
+            className="flex max-md:flex-col gap-5 items-center bg-tertirary w-full overflow-hidden rounded-lg"
             key={el.id}
           >
             <Image
