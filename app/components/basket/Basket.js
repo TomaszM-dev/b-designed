@@ -7,7 +7,7 @@ import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 
-const Basket = ({ setBasketOpen, basketOpen }) => {
+const Basket = ({ setBasketOpen, basketOpen, setPopup }) => {
   const [isLoadingg, setIsLoading] = useState(false);
   const [dataa, setData] = useState([{}]);
   const [totalPrice, setTotalPrice] = useState(0);

@@ -80,7 +80,7 @@ export const scrollRight = {
 export const scrollReveal = {
   hidden: {
     opacity: 0,
-    scale: 1.2,
+    scale: 1.1,
     transition: {
       ease: "easeOut",
       duration: 0.75,

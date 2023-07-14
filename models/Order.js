@@ -24,6 +24,11 @@ const orderSchema = new Schema(
 
       required: true,
     },
+    username: {
+      type: String,
+
+      required: true,
+    },
   },
 
   { timestamps: true }

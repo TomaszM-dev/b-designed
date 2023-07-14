@@ -18,7 +18,6 @@ export const POST = async (request) => {
     image,
   });
 
-  console.log(newProduct);
   try {
     await newProduct.save();
     return new NextResponse("Product has been landed", {

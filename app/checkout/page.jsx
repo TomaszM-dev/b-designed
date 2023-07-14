@@ -78,9 +78,11 @@ const Checkout = () => {
           cardNumber,
           cvc,
           payment,
+          username: session.data.user.name,
         }),
       });
       mutate();
+
       e.target.value.reset();
     } catch (err) {}
     setOpenPopup(true);

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import DarkModeToggle from "../darkModeToggle/DarkModeToggle";
 import { signOut, useSession } from "next-auth/react";
@@ -40,7 +40,7 @@ const links = [
 ];
 import useSWR from "swr";
 
-const Navbar = () => {
+const Navbar = ({ popup, setPopup }) => {
   const [basketOpen, setBasketOpen] = useState(false);
   const session = useSession();
   const [activeBar, setActiveBar] = useState(false);
@@ -50,13 +50,17 @@ const Navbar = () => {
     `/api/products?username=${session?.data?.user.name}`,
     fetcher
   );
+  const [item, setItem] = useState(data);
 
   const basketHandler = () => {
     setBasketOpen(true);
+    console.log(item);
   };
 
+  useEffect(() => {});
+
   return (
-    <div className=" fixed  w-[100%] top-0 left-[0%] px-20 max-md:px-6 text-secondary  bg-background flex  h-20  items-center font-[600] justify-between  text-[1.2rem] border-b-[0.1rem] z-[1000] ">
+    <div className=" fixed  w-[100%] top-0 left-[0%] px-20 max-md:px-6 text-secondary  bg-background flex  h-20  items-center font-[600] justify-between text-[1.2rem] border-b-[0.1rem] z-[1000] ">
       <Link href="/">B-designed</Link>
       <div className="flex gap-10 ">
         <DarkModeToggle></DarkModeToggle>

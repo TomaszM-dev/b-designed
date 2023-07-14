@@ -32,16 +32,22 @@ import {
   photoAnim,
   fade,
 } from "@/app/components/animations/animation";
+import film from "public/f1.png";
+import film2 from "public/film2.png";
+import Basket from "@/app/components/basket/Basket";
+import Navbar from "@/app/components/navbar/Navbar";
 
 const Category = ({ params }) => {
   const [element, controls] = useScroll();
   const [auth, setIsAuth] = useState(true);
+  const [popup, setPopup] = useState(false);
   const router = useRouter();
 
   const data = coursesData();
   const current = data.filter((el) => el.category === params.category);
   const session = useSession();
   console.log(session);
+  console.log(current);
 
   const buyHandler = async (e) => {
     e.preventDefault();
@@ -77,8 +83,7 @@ const Category = ({ params }) => {
           }),
         });
 
-        res.status === 201 && console.log("essa");
-        // res.status === 500 && console.log("lipton");
+        window.location.reload(false);
       } catch (e) {}
     }
   };
@@ -148,11 +153,11 @@ const Category = ({ params }) => {
           animate={controls}
           initial="hidden"
           ref={element}
-          className="overflow-hidden"
+          className="overflow-hidden w-full"
         >
           <Image
             alt="#"
-            src={current[0].image}
+            src={current[0].category === "filmpire" ? film : film2}
             width={1000}
             height={1000}
             className="w-full h-full rounded-lg overflow-hidden"
@@ -326,12 +331,11 @@ const Category = ({ params }) => {
             </p>
           </li>
         </ul>
-        <button
-          onClick={buyHandler}
-          className="px-7 py-4 mt-4 text-[1.5rem] font-[700] bg-main rounded-xl shadow-xl"
-        >
-          {current[0].buy}
-        </button>
+        <form onSubmit={buyHandler}>
+          <button className="px-7 py-4 mt-4 text-[1.5rem] font-[700] bg-main rounded-xl shadow-xl">
+            {current[0].buy}
+          </button>
+        </form>
       </div>
       {!auth && (
         <div className="w-full min-h-screen bg-red bg-opacity-[0.13] fixed z-10 top-0 left-0   ">

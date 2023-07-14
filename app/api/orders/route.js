@@ -3,7 +3,8 @@ import Order from "@/models/Order";
 import connect from "@/utils/db";
 
 export const POST = async (request) => {
-  const { cardHolderName, cardNumber, cvc, payment } = await request.json();
+  const { cardHolderName, cardNumber, cvc, payment, username } =
+    await request.json();
 
   await connect();
 
@@ -12,6 +13,7 @@ export const POST = async (request) => {
     cardNumber,
     cvc,
     payment,
+    username,
   });
 
   try {
