@@ -58,10 +58,9 @@ const Contact = () => {
     <div className="mt-40 flex flex-col  gap-20">
       <div className="flex flex-col gap-10">
         <motion.h1
-          variants={scrollReveal}
-          animate={controls}
+          variants={scrollLeft}
+          whileInView={"show"}
           initial="hidden"
-          ref={element}
           className="text-[2.7rem] max-md:text-[2.2rem] text-center font-[700] leading-[3.3rem] mb-20 w-[90%] mx-auto"
         >
           Contact us if you have any specific questions
@@ -71,9 +70,8 @@ const Contact = () => {
         <div className="flex gap-20 items-center max-lg:flex-col max-lg:mt-10 ">
           <motion.div
             variants={scrollLeft}
-            animate={controls}
+            whileInView={"show"}
             initial="hidden"
-            ref={element}
             className="flex flex-col gap-10 pr-7 w-[95%] flex-1"
           >
             <div className="w-[20%] h-[7px] rounded-2xl mb-[-1.4rem] bg-main"></div>

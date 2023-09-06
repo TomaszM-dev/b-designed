@@ -15,14 +15,53 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   const [element, controls] = useScroll();
+  const scrollLeft = {
+    hidden: {
+      x: -300,
+      opacity: 0,
+      transition: {
+        ease: "easeOut",
+        duration: 0.5,
+        delay: 0.1,
+      },
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        ease: "easeOut",
+        duration: 0.5,
+        delay: 0.4,
+      },
+    },
+  };
+  const scrollRight = {
+    hidden: {
+      opacity: 0,
+      x: 300,
+      transition: {
+        ease: "easeOut",
+        duration: 0.5,
+        delay: 0.1,
+      },
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        ease: "easeOut",
+        duration: 0.5,
+        delay: 0.4,
+      },
+    },
+  };
 
-  console.log(element);
   return (
     <div className="mt-[8rem]  max-lg:w-[70%] max-lg:mx-auto max-md:w-[100%]">
       <motion.div className="flex items-center gap-[10rem]  max-lg:flex-col  max-lg:gap-20 ">
         <motion.div
           variants={scrollLeft}
-          animate={controls}
+          whileInView={"show"}
           initial="hidden"
           ref={element}
           className="flex-1 flex-col flex gap-[2rem]"
@@ -37,10 +76,9 @@ const Hero = () => {
           <Button url="/courses" text="See our Products"></Button>
         </motion.div>
         <motion.div
-          variants={scrollRight}
-          animate={controls}
+          variants={scrollLeft}
+          whileInView={"show"}
           initial="hidden"
-          ref={element}
           className="flex-1 flex-col flex gap-[5rem] "
         >
           <Image

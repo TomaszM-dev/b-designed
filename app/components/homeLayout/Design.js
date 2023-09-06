@@ -18,7 +18,7 @@ const Design = () => {
       animate={controls}
       initial="hidden"
       ref={element}
-      className="border-[3px] w-[75%] max-md:w-[100%] h-fit py-10 mx-auto border-main  relative flex flex-col gap-10 items-center justify-center "
+      className="border-[3px]  w-[75%] max-md:w-[100%] h-fit py-10 mx-auto border-main  relative flex flex-col gap-10 items-center justify-center "
     >
       <div className="p-4 border-2 border-main absolute top-[-1rem] left-[-1rem] bg-background "></div>
       <div className="p-4 border-2 border-main absolute top-[45%] left-[-1.3rem] bg-background "></div>
@@ -26,10 +26,10 @@ const Design = () => {
       <div className="p-4 border-2 border-main absolute bottom-[-1rem] right-[-1.3rem] bg-background "></div>
       <div className="p-4 border-2 border-main absolute top-[45%] right-[-1.3rem] bg-background "></div>
       <div className="p-4 border-2 border-main absolute top-[-1rem] right-[-1.3rem] bg-background "></div>
-      <p className="text-secondarytext uppercase font-[600]">
+      <p className="text-secondarytext uppercase font-[600] max-sm:text-center">
         Learn how to create beautifull design
       </p>
-      <h2 className="gradientText text-[3.6rem] font-[700] text-center leading-[3.3rem]">
+      <h2 className="gradientText text-[3.6rem] max-sm:text-[3rem] font-[700] text-center leading-[3.3rem]">
         The B-designed masterclass experience
       </h2>
       <p className="w-[70%] text-center text-[1.2rem] font-[500]">

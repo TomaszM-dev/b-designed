@@ -114,7 +114,7 @@ const Navbar = ({ popup, setPopup }) => {
                   onClick={() => setActiveBar(!activeBar)}
                   key={el.id}
                   href={el.url}
-                  className=" text-[3rem] p-3 hover:text-main"
+                  className=" max-sm:text-[2rem] text-[3rem] p-3 hover:text-main"
                 >
                   {el.title}
                 </Link>
@@ -123,7 +123,7 @@ const Navbar = ({ popup, setPopup }) => {
           </div>
           <div
             onClick={() => setActiveBar(!activeBar)}
-            className="absolute right-0 px-20  py-10 text-[2rem] cursor-pointer"
+            className="absolute right-0 px-20 max-sm:px-10 py-10 text-[2rem] cursor-pointer"
           >
             X
           </div>

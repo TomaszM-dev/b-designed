@@ -32,7 +32,7 @@ const Courses = () => {
         animate={controls}
         initial="hidden"
         ref={element}
-        className="text-[2.7rem] text-center font-[700] leading-[3.3rem] mb-5 w-[80%] max-md:w-[100%] mx-auto"
+        className="text-[2.7rem] max-sm:text-[2.2rem] text-center font-[700] leading-[3.3rem] mb-5 w-[80%] max-md:w-[100%] mx-auto"
       >
         Choose our course <span className="gradientText">Enroll Now</span> and
         see how your skills goes through a roof!
@@ -43,7 +43,7 @@ const Courses = () => {
           animate={controls}
           initial="hidden"
           ref={element}
-          className="w-full h-[29rem] max-lg:h-[35rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group "
+          className="w-full h-[29rem] max-sm:h-[45rem]  max-lg:h-[35rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group "
         >
           <Image
             className="  w-full h-[55%] max-lg:h-[65%] grayFilter  object-cover  block"
@@ -94,7 +94,7 @@ const Courses = () => {
           animate={controls}
           initial="hidden"
           ref={element}
-          className="w-full h-[30rem] max-lg:h-[35rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group"
+          className="w-full h-[30rem] max-sm:h-[45rem] max-lg:h-[35rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group"
         >
           <Image
             className="  w-full h-[55%] max-lg:h-[65%] grayFilter  object-cover  block"

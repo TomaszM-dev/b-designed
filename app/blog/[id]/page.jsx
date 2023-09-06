@@ -18,7 +18,7 @@ const BlogPost = async ({ params }) => {
 
   return (
     <div className="flex flex-col gap-5  mt-40">
-      <h1 className="text-[3rem] text-center font-[700] leading-[3.3rem] mb-5 w-[90%] mx-auto">
+      <h1 className="text-[3rem] max-sm:text-[2.4rem] text-center font-[700] leading-[3.3rem] mb-5 w-[90%] mx-auto">
         {data.title}
         <span className="gradientText"> and enjoy coding</span>
       </h1>
@@ -31,7 +31,7 @@ const BlogPost = async ({ params }) => {
         src={data.image}
         width={1000}
         height={500}
-        className="mx-auto rounded-2xl"
+        className="mx-auto rounded-2xl  max-sm:h-[20rem] max-sm:object-cover"
       ></Image>
       <div className="w-[80%] mx-auto my-10">
         <p className="text-[1.4rem] text-secondarytext text-center ">

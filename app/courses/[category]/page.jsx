@@ -101,26 +101,23 @@ const Category = ({ params }) => {
   };
 
   const es = Math.floor((1 + Math.random()) * 1000);
-  console.log(es);
 
   return (
     <div className="  mx-auto flex flex-col items-center gap-20 mt-[5rem] text-secondary">
       <div className=" flex flex-col items-center gap-9 mt-20 ">
         <motion.p
           variants={scrollLeft}
-          animate={controls}
+          whileInView={"show"}
           initial="hidden"
-          ref={element}
           className="uppercase gradientText font-[700] text-[1.2rem]"
         >
           {current[0].title}
         </motion.p>
         <motion.h1
           variants={up}
-          animate={controls}
+          whileInView={"show"}
           initial="hidden"
-          ref={element}
-          className="text-[3.5rem] font-[700] text-center leading-[3.9rem]"
+          className="text-[3.5rem] max-sm:text-[2.7rem] font-[700] text-center leading-[3.9rem]"
         >
           {current[0].headline}
           <span className="gradientText"> {current[0].headlineG}</span>
@@ -160,7 +157,7 @@ const Category = ({ params }) => {
             src={current[0].category === "filmpire" ? film : film2}
             width={1000}
             height={1000}
-            className="w-full h-full rounded-lg overflow-hidden"
+            className="w-full h-full rounded-lg overflow-hidden max-sm:h-[20rem] max-sm:object-cover"
           ></Image>
         </motion.div>
       </div>

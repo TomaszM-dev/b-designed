@@ -33,30 +33,30 @@ const Register = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center border-[4px] border-tertirary max-w-fit p-10 mx-auto rounded-lg mt-40 ">
+    <div className="flex flex-col items-center border-[4px]  max-sm:w-full border-tertirary max-w-fit p-10 mx-auto rounded-lg mt-40 ">
       <form
         className="flex flex-col  py-10 px-4 gap-10 w-96"
         onSubmit={handleSubmit}
       >
         <input
           type="text"
-          className="p-4 bg-tertirary w-full"
+          className="p-4 bg-tertirary w-full max-sm:w-[90%] max-sm:mx-auto"
           placeholder="username"
           required
         />
         <input
           type="text"
-          className="p-4 bg-tertirary w-full"
+          className="p-4 bg-tertirary w-full max-sm:w-[90%] max-sm:mx-auto"
           placeholder="email"
           required
         />
         <input
           type="password"
-          className="p-4 bg-tertirary w-full"
+          className="p-4 bg-tertirary w-full max-sm:w-[90%] max-sm:mx-auto"
           placeholder="password"
           required
         />
-        <button className="px-6 py-4  font-[700] bg-main uppercase text-white">
+        <button className="px-6 py-4  font-[700] bg-main uppercase text-white max-sm:w-[90%] max-sm:mx-auto">
           Register
         </button>
       </form>

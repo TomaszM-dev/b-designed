@@ -30,7 +30,7 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center border-[4px] border-tertirary max-w-fit p-4 mx-auto rounded-lg mt-60">
       <form
-        className="flex flex-col  py-10 px-4 gap-8 w-96"
+        className="flex flex-col  py-10 px-4 gap-8 w-96 max-sm:w-full"
         onSubmit={handleSubmit}
       >
         <input
