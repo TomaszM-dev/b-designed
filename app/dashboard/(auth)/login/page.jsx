@@ -28,33 +28,44 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center border-[4px] border-tertirary max-w-fit p-4 mx-auto rounded-lg mt-60">
+    <div className="flex flex-col items-center  max-lg:w-[70%] max-md:w-[90%] max-sm:w-[100%] w-[50%]   p-4 mx-auto rounded-lg mt-40">
       <form
-        className="flex flex-col  py-10 px-4 gap-8 w-96 max-sm:w-full"
+        className="flex flex-col  py-10 px-4 gap-6 w-full max-sm:w-full"
         onSubmit={handleSubmit}
       >
         <input
           type="text"
-          className="p-5 bg-tertirary w-full"
-          placeholder="email"
+          className="p-5 bg-tertirary w-full rounded-md"
+          placeholder="TESTING: admin@gmail.com"
           required
         />
         <input
           type="password"
-          className="p-5 bg-tertirary w-full"
-          placeholder="password"
+          className="p-5 bg-tertirary w-full rounded-md"
+          placeholder="TESTING: admin"
           required
         />
-        <button className="px-6 py-4  font-[700] bg-main uppercase text-white">
+        <button className="px-6 py-4  font-[700] bg-main uppercase text-white rounded-md">
           Login
         </button>
       </form>
-      <div className="flex gap-10">
-        <button onClick={() => signIn("google")} className="border-b-2 pb-2">
-          Login With Google
+      <div className="flex w-full items-center gap-7 mb-10">
+        <span className="w-full bg-white h-[1px]"></span>
+        <span>OR</span>
+        <span className="w-full bg-white h-[1px]"></span>
+      </div>
+      <div className="flex flex-col w-full justify-center gap-3 items-center">
+        <button
+          onClick={() => signIn("google")}
+          className=" bg-tertirary uppercase py-5 rounded-md  font-semibold shadow-sm  w-full"
+        >
+          continue with google
         </button>
-        <Link href="/dashboard/register " className="border-b-2 pb-2">
-          Register
+        <Link
+          href="/dashboard/register "
+          className="text-center py-5 bg-tertirary  uppercase font-semibold shadow-sm  w-full rounded-md"
+        >
+          Register an account
         </Link>
       </div>
     </div>

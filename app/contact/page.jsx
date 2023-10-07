@@ -58,7 +58,7 @@ const Contact = () => {
     <div className="mt-40 flex flex-col  gap-20">
       <div className="flex flex-col gap-10">
         <motion.h1
-          variants={scrollLeft}
+          variants={up}
           whileInView={"show"}
           initial="hidden"
           className="text-[2.7rem] max-md:text-[2.2rem] text-center font-[700] leading-[3.3rem] mb-20 w-[90%] mx-auto"
@@ -108,12 +108,12 @@ const Contact = () => {
           <div className="flex-1">
             <Image
               src={contact}
-              className=" animate-[move_3s_ease_infinite] max-lg:w-[50%] max-lg:mx-auto"
+              className=" animate-[move_3s_ease_infinite] max-lg:w-[50%] max-lg:mx-auto max-sm:w-[80%]"
             ></Image>
           </div>
           <form
             onSubmit={handleSubmit}
-            className="flex-1 flex flex-col gap-5 font-[600] text-secondarytext max-lg:w-[70%]"
+            className="flex-1 flex flex-col gap-5 font-[600] text-secondarytext max-lg:w-[70%] max-sm:w-[90%]"
           >
             <input
               className="bg-tertirary py-5 px-4  "
@@ -154,8 +154,14 @@ const Contact = () => {
         </div>
       )}
       {error && (
-        <div className="w-full min-h-screen bg-red bg-opacity-20 fixed z-100000 top-0 left-0   ">
-          <div className="w-[30rem] h-[15rem] bg-black  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center  px-5 py-5 opacity-90 rounded-lg">
+        <div
+          onClick={closeHandler}
+          className="w-full min-h-screen bg-black bg-opacity-40 fixed z-100000 top-0 left-0   "
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="w-[30rem] h-[15rem] bg-black  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center  px-5 py-5 opacity-100 rounded-lg"
+          >
             <div
               onClick={closeHandler}
               className="cursor-pointer self-end text-[1.6rem] mb-4"

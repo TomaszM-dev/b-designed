@@ -46,7 +46,7 @@ const OurProduct = () => {
             animate={controls}
             initial="hidden"
             ref={element}
-            className="w-full h-[29rem] max-lg:h-[35rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group "
+            className="w-full h-[29rem] max-lg:h-[41rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group "
           >
             <Image
               className="  w-full h-[55%] max-lg:h-[65%] grayFilter  object-cover  block"
@@ -97,7 +97,7 @@ const OurProduct = () => {
             animate={controls}
             initial="hidden"
             ref={element}
-            className="w-full h-[30rem] max-lg:h-[35rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group"
+            className="w-full h-[30rem] max-lg:h-[41rem] cursor-pointer  relative  flex  flex-col rounded-2xl  overflow-hidden group"
           >
             <Image
               className="  w-full h-[55%] max-lg:h-[65%] grayFilter  object-cover  block"

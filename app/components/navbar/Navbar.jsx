@@ -39,11 +39,13 @@ const links = [
   },
 ];
 import useSWR from "swr";
+import { usePathname } from "next/navigation";
 
 const Navbar = ({ popup, setPopup }) => {
   const [basketOpen, setBasketOpen] = useState(false);
   const session = useSession();
   const [activeBar, setActiveBar] = useState(false);
+  const pathname = usePathname();
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, error, isLoading } = useSWR(
@@ -57,19 +59,41 @@ const Navbar = ({ popup, setPopup }) => {
     console.log(item);
   };
 
-  useEffect(() => {});
+  const [sticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 
   return (
-    <div className=" fixed  w-[100%] top-0 left-[0%] px-20 max-md:px-6 text-secondary  bg-background flex  h-20  items-center font-[600] justify-between text-[1.2rem] border-b-[0.1rem] z-[1000] ">
-      <Link href="/">B-designed</Link>
+    <div
+      className={` fixed  w-[100%] top-0 left-[0%] px-20 max-md:px-6 text-secondary  bg-background flex    items-center font-[600] justify-between text-[1.2rem] py-8 z-[1000] transition-all duration-100  border-main ${
+        sticky ? "border-b-[2px] border-b-main " : ""
+      }`}
+    >
+      <Link href="/" className="gradientText text-[1.5rem]">
+        B-designed
+      </Link>
       <div className="flex gap-10 ">
-        <DarkModeToggle></DarkModeToggle>
         {links.map((el) => {
           return (
             <Link
               key={el.id}
               href={el.url}
-              className="self-center max-lg:hidden"
+              className={`self-center max-lg:hidden ${
+                pathname === el.url ? "gradientText" : ""
+              }`}
             >
               {el.title}
             </Link>
@@ -114,7 +138,9 @@ const Navbar = ({ popup, setPopup }) => {
                   onClick={() => setActiveBar(!activeBar)}
                   key={el.id}
                   href={el.url}
-                  className=" max-sm:text-[2rem] text-[3rem] p-3 hover:text-main"
+                  className={` max-sm:text-[1.8rem] text-[2.3rem] p-3 hover:text-main 
+                  ${pathname === el.url ? "gradientText" : ""}
+                  `}
                 >
                   {el.title}
                 </Link>
@@ -123,7 +149,7 @@ const Navbar = ({ popup, setPopup }) => {
           </div>
           <div
             onClick={() => setActiveBar(!activeBar)}
-            className="absolute right-0 px-20 max-sm:px-10 py-10 text-[2rem] cursor-pointer"
+            className="absolute right-0 px-20 max-sm:px-10 py-10 text-[1.8rem] cursor-pointer"
           >
             X
           </div>

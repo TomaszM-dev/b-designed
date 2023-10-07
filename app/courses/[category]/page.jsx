@@ -335,8 +335,14 @@ const Category = ({ params }) => {
         </form>
       </div>
       {!auth && (
-        <div className="w-full min-h-screen bg-red bg-opacity-[0.13] fixed z-10 top-0 left-0   ">
-          <div className="w-[30rem] h-[19rem] bg-black  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center   px-5 py-5 opacity-90 rounded-lg">
+        <div
+          onClick={closeHandler}
+          className="w-full min-h-screen bg-black bg-opacity-[0.43] fixed z-10 top-0 left-0   "
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="w-[30rem] h-[19rem] bg-black  absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center   px-5 py-5 opacity-100 rounded-lg"
+          >
             <div
               onClick={closeHandler}
               className="cursor-pointer self-end text-[1.6rem] mb-4"
