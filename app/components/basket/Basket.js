@@ -6,6 +6,7 @@ import film from "public/f1.png";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Basket = ({ setBasketOpen, basketOpen, setPopup }) => {
   const [isLoadingg, setIsLoading] = useState(false);
@@ -52,11 +53,14 @@ const Basket = ({ setBasketOpen, basketOpen, setPopup }) => {
     }
   };
   return (
-    <div
+    <motion.div
+      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: 100 }}
+      exit={{ opacity: 0, x: 100 }}
       onClick={closeHandler}
-      className="shadowClose w-full min-h-screen bg-background bg-opacity-60 fixed z-100000 top-0 left-0   "
+      className="shadowClose w-full min-h-screen bg-black bg-opacity-40 fixed z-100000 top-0 left-0   "
     >
-      <div className="w-[35rem] max-md:w-full h-full bg-background  right-0 top-0 absolute  flex flex-col items-center  px-5 py-5 opacity-90 rounded-lg">
+      <div className="w-[35rem] overflow-scroll max-md:w-full h-full bg-background  right-0 top-0 absolute  flex flex-col items-center  px-5 py-5 opacity-90 rounded-lg">
         <div
           onClick={() => setBasketOpen(false)}
           className="cursor-pointer self-end text-[1.6rem] mb-4 mr-3"
@@ -73,7 +77,7 @@ const Basket = ({ setBasketOpen, basketOpen, setPopup }) => {
             <div className="mt-10 w-[100%] h-[37rem] flex flex-col gap-5 overflow-scroll  ">
               {data?.map((product) => {
                 return (
-                  <div className="flex gap-5 bg-tertirary rounded-lg  items-center">
+                  <div className="flex max-sm:flex-col  gap-5 bg-tertirary rounded-lg  items-center">
                     <Image
                       src={
                         product.title === "FilmPire - netflix clone"
@@ -98,14 +102,14 @@ const Basket = ({ setBasketOpen, basketOpen, setPopup }) => {
             </div>
           )}
         </div>
-        <div className="flex flex-col gap-4 mt-10 ">
+        <div className="flex flex-col gap-4 mt-[-5rem] ">
           <p>Total Price: ${totalPrice}</p>
           <Link href="/checkout" onClick={() => setBasketOpen(false)}>
             <button className="px-7 py-3 bg-main rounded-lg ">Checkout</button>
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faBars } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { BiLogIn } from "react-icons/bi";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Basket from "../basket/Basket";
 
@@ -86,7 +87,7 @@ const Navbar = ({ popup, setPopup }) => {
       <Link href="/" className="gradientText text-[1.5rem]">
         B-designed
       </Link>
-      <div className="flex gap-10 ">
+      <div className="flex gap-6  ">
         {links.map((el) => {
           return (
             <Link
@@ -110,7 +111,7 @@ const Navbar = ({ popup, setPopup }) => {
           </button>
         </div>
         {session.status === "authenticated" && (
-          <div className="flex gap-10">
+          <div className="flex gap-4 items-center">
             <div
               onClick={basketHandler}
               className="self-center flex gap-1 items-center cursor-pointer"
@@ -126,42 +127,52 @@ const Navbar = ({ popup, setPopup }) => {
             </button>
             <button
               onClick={signOut}
-              className="md:hidden rounded-md px-4 py-1 bg-main w-max text-white"
+              className="md:hidden rounded-md   text-3xl w-max text-white"
             >
               <BiLogIn />
             </button>
           </div>
         )}
       </div>
-      {basketOpen && (
-        <Basket basketOpen={basketOpen} setBasketOpen={setBasketOpen} />
-      )}
-      {activeBar && (
-        <div className="w-full min-h-screen bg-background   fixed z-10 top-0 left-0  ">
-          <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center  px-5 py-5 opacity-90 rounded-lg">
-            {links.map((el) => {
-              return (
-                <Link
-                  onClick={() => setActiveBar(!activeBar)}
-                  key={el.id}
-                  href={el.url}
-                  className={` max-sm:text-[1.8rem] text-[2.3rem] p-3 hover:text-main 
+      <AnimatePresence>
+        {basketOpen && (
+          <Basket basketOpen={basketOpen} setBasketOpen={setBasketOpen} />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {activeBar && (
+          <motion.div
+            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 100 }}
+            exit={{ opacity: 0, x: 100 }}
+            className="w-full min-h-screen bg-background   fixed z-10 top-0 left-0  "
+          >
+            <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center  px-5 py-5 opacity-90 rounded-lg">
+              {links.map((el) => {
+                return (
+                  <Link
+                    onClick={() => setActiveBar(!activeBar)}
+                    key={el.id}
+                    href={el.url}
+                    className={` max-sm:text-[1.8rem] text-[2.3rem] p-3 hover:text-main 
                   ${pathname === el.url ? "gradientText" : ""}
                   `}
-                >
-                  {el.title}
-                </Link>
-              );
-            })}
-          </div>
-          <div
-            onClick={() => setActiveBar(!activeBar)}
-            className="absolute right-0 px-20 max-sm:px-10 py-10 text-[1.8rem] cursor-pointer"
-          >
-            X
-          </div>
-        </div>
-      )}
+                  >
+                    {el.title}
+                  </Link>
+                );
+              })}
+            </div>
+            <div
+              onClick={() => setActiveBar(!activeBar)}
+              className="absolute right-0 px-20 max-sm:px-10 py-10 text-[1.8rem] cursor-pointer"
+            >
+              X
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
