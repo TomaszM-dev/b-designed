@@ -78,7 +78,7 @@ const Hero = () => {
         </motion.div>
         <motion.div
           variants={scrollRight}
-          whileInView={"show"}
+          animate={"show"}
           initial="hidden"
           className="flex-1 flex-col flex gap-[5rem] "
         >
