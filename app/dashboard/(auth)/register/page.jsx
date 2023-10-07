@@ -33,7 +33,7 @@ const Register = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center  max-lg:w-[70%] max-md:w-[90%] max-sm:w-[100%] w-[50%] p-4 mx-auto rounded-lg mt-40">
+    <div className="flex flex-col items-center max-sm:mt-24 max-lg:w-[70%] max-md:w-[90%] max-sm:w-[100%] w-[50%] p-4 mx-auto rounded-lg mt-40">
       <form
         className="flex flex-col  py-10 px-4 gap-4 w-full max-sm:w-full"
         onSubmit={handleSubmit}
