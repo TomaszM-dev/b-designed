@@ -7,6 +7,7 @@ import { signOut, useSession } from "next-auth/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faBars } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import { BiLogIn } from "react-icons/bi";
 
 import Basket from "../basket/Basket";
 
@@ -119,9 +120,15 @@ const Navbar = ({ popup, setPopup }) => {
             </div>
             <button
               onClick={signOut}
-              className="rounded-md px-4 py-1 bg-main w-max text-white"
+              className="max-sm:hidden rounded-md px-4 py-1 bg-main w-max text-white"
             >
               Logout
+            </button>
+            <button
+              onClick={signOut}
+              className="md:hidden rounded-md px-4 py-1 bg-main w-max text-white text-3xl"
+            >
+              <BiLogIn />
             </button>
           </div>
         )}

@@ -36,7 +36,7 @@ const Login = () => {
         <input
           type="text"
           className="p-5 bg-tertirary w-full rounded-md"
-          placeholder="TESTING: admin@gmail.com"
+          placeholder="TESTING: admin"
           required
         />
         <input
