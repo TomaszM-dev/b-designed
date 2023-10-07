@@ -56,7 +56,7 @@ const Basket = ({ setBasketOpen, basketOpen, setPopup }) => {
       onClick={closeHandler}
       className="shadowClose w-full min-h-screen bg-background bg-opacity-60 fixed z-100000 top-0 left-0   "
     >
-      <div className="w-[35rem] max-md:w-full h-full bg-black  right-0 top-0 absolute  flex flex-col items-center  px-5 py-5 opacity-90 rounded-lg">
+      <div className="w-[35rem] max-md:w-full h-full bg-background  right-0 top-0 absolute  flex flex-col items-center  px-5 py-5 opacity-90 rounded-lg">
         <div
           onClick={() => setBasketOpen(false)}
           className="cursor-pointer self-end text-[1.6rem] mb-4 mr-3"

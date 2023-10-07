@@ -110,7 +110,7 @@ const Navbar = ({ popup, setPopup }) => {
           </button>
         </div>
         {session.status === "authenticated" && (
-          <div className="flex gap-4">
+          <div className="flex gap-10">
             <div
               onClick={basketHandler}
               className="self-center flex gap-1 items-center cursor-pointer"
@@ -126,7 +126,7 @@ const Navbar = ({ popup, setPopup }) => {
             </button>
             <button
               onClick={signOut}
-              className="md:hidden rounded-md  py-1  w-max text-white text-3xl"
+              className="md:hidden rounded-md px-4 py-1 bg-main w-max text-white"
             >
               <BiLogIn />
             </button>
@@ -137,7 +137,7 @@ const Navbar = ({ popup, setPopup }) => {
         <Basket basketOpen={basketOpen} setBasketOpen={setBasketOpen} />
       )}
       {activeBar && (
-        <div className="w-full  bg-black   fixed z-10 top-0 left-0  ">
+        <div className="w-full min-h-screen bg-background   fixed z-10 top-0 left-0  ">
           <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center  px-5 py-5 opacity-90 rounded-lg">
             {links.map((el) => {
               return (
