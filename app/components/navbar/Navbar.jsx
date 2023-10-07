@@ -126,7 +126,7 @@ const Navbar = ({ popup, setPopup }) => {
             </button>
             <button
               onClick={signOut}
-              className="md:hidden rounded-md px-4 py-1 bg-main w-max text-white text-3xl"
+              className="md:hidden rounded-md  py-1  w-max text-white text-3xl"
             >
               <BiLogIn />
             </button>
